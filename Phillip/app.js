@@ -1984,7 +1984,7 @@ class Administrator extends React.Component {
 			<div className="admin-grid">
 			<div>
       <h3 className="eventmediumtitle">
-        Godkjenn bruker:
+        Godkjenn brukere:
       </h3>
       <ul>
         {
@@ -2021,8 +2021,8 @@ class Administrator extends React.Component {
       <ul>
         {this.state.mannskapsliste}
       </ul>
-        <div className="admin-btn-right">
-          <button className="btn btn-outline-success" ref="newrole">Legg til vaktmaler og roller</button>
+        <div className="admin-btn-add">
+          <button className="btn btn-success" ref="newrole">Legg til vaktmaler og roller</button>
         </div>
       </div>
 		</div>
@@ -2121,7 +2121,9 @@ class Administrator extends React.Component {
     for (let user_has_competence of this.active) {
       const reader = new FileReader();
       usercomp.push(<li className="admin-li" key={user_has_competence.compuserID}>
+        <div className="admin-accept-role">
         {user_has_competence.firstname + " " + user_has_competence.lastname + " " + user_has_competence.title}
+      </div>
         <div className="admin-btn-edit">
         <button className="btn btn-outline-success btn-sm" onClick = {() => {
           this.updatecomplist(user_has_competence.compuserID, user_has_competence.userID);
@@ -2693,6 +2695,3 @@ ReactDOM.render((<HashRouter>
     </Switch>
   </div>
 </HashRouter>), document.getElementById('root'));
-//Neste: Vise (og skjule) og oppdatere brukerinfo
-//Må kunne endre passord
-//Ikke bruk force.update
