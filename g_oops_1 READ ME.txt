@@ -1,0 +1,1 @@
+g_oops_1 er en manuell beskrivelse av databasen laget i mysql
