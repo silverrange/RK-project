@@ -1,0 +1,11 @@
+Installasjonsveiledning 
+
+1: Åpne CMD/PowerShell/ledetekst/terminalen på pcen din.
+2: Skriv inn cd og naviger deg til prosjektmappen /Project. 
+ 	dvs for eksempel cd C:\Users\ph_au\Documents\GitHub\project-nr-3\Project
+3: Trykk enter
+4: skriv inn "npm install" 
+5: skriv inn "npm start" 
+
+	
+
