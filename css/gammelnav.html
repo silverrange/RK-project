@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="nav.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Old+Standard+TT" rel="stylesheet">
+    <meta charset="utf-8">
+    <title>Røde Kors Sanitetsvakt</title>
+    <div class="navbarbg">
+      <ul>
+        <li class="navcont"> <img class="logo" src="rodekors.png" alt="Røde Kors Sanitetsvakt"> </li>
+        <li><a href="navbar.html">Aktuelt</a></li>
+        <li class="dropdown">
+          <a href="#" class="dropbtn">Arrangementer</a>
+          <div class="dropdown-content">
+            <a href="#">Kommende</a>
+            <a href="#">Tidligere</a>
+          </div>
+        </li>
+        <li><a href="#">Kalender</a></li>
+        <li class="dropdown">
+          <a href="omoss.html" class="dropbtn">Om oss</a>
+        </li>
+        <li class="dropdown">
+          <a href="profil.html" class="dropbtn">Min profil</a>
+          <div class="dropdown-content">
+            <a href="index.html">Logg ut</a>
+          </div>
+        </li>
+        <li> <input id="sok" type="text" placeholder="Brukersøk"> </li>
+      </ul>
+    </div>
+  </head>
+  <body>
+
+  <div class="storwrap">
+
+    <div class="profilvakter">
+      <h1 class="mellomtittel">Kommende vakter</h1>
+    </div>
+
+
+  <div class="aktueltlitenwrap">
+    <div class="profilprofil">
+      <h3 class="mellomtittel">Personalia</h3>
+      <img class="aktueltprofilbilde" src="profilepicture.jpg" alt="">
+      <p class="aktueltprofiltekst">Per Ole Finsnes</p>
+      <p class="aktueltprofiltekst">Vaktpoeng: 14</p>
+      <p class="aktueltprofiltekst">Fødselsdato:</p>
+      <p class="aktueltprofiltekst">Adresse:</p>
+      <p class="aktueltprofiltekst">Postnr:</p>
+      <p class="aktueltprofiltekst">Telefon:</p>
+      <p class="aktueltprofiltekst">Epost:</p>
+    </div>
+  </div>
+
+    <div class="profilkurs">
+      <h1 class="mellomtittel">Registrere kurs?</h1>
+    </div>
+
+    <div class="aktueltlitenwrap">
+    <div class="profildeaktivere">
+      <h3 class="mellomtittel">Deaktivere profil?</h3>
+      <p>Ønsker du av en grunn å deaktivere din profil kan du klikke på knappen under. Profilen din vil da bli deaktivert og du må kontakte administrator for å aktivere den igjen.</p>
+      <button type="button">Ja, jeg ønsker å deaktivere min profil</button>
+    </div>
+  </div>
+</div>
+
+<style media="screen">
+.navbarbg {
+  background-color: #333 !important;
+  float: left;
+  height: 63px;
+  width: 100%;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+li {
+  float: left;
+  margin-top: 15px;
+  font-family: 'Old Standard TT', serif;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 13%;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.navcont {
+  display: inline-block;
+  color: white;
+  text-align: left;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+</style>
+  </body>
+</html>
