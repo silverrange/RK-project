@@ -32,7 +32,7 @@ class LoginPage extends React.Component {
           <div className="login-wrap">
             <div>
               <div className="login-logo">
-                <img className="login-logo-img" src="/images/rodekors-01.png" alt="Logo"/>
+                <img className="login-logo-img" src="images/rodekors-01.png" alt="Logo"/>
               </div>
               <form>
                 <div className="form-group">
@@ -113,7 +113,7 @@ class ForgotPassword extends React.Component {
 
             <div>
               <div className="login-logo">
-                <img className="login-logo-img" src="/images/rodekors-01.png" alt="Logo"/>
+                <img className="login-logo-img" src="images/rodekors-01.png" alt="Logo"/>
               </div>
               <p>Ved glemt passord sender du inn eposten din og du vil få tilsendt videre informasjon på mail.</p>
               <form>
@@ -197,7 +197,7 @@ class Register extends React.Component {
         <div className="login-wrap-reg">
           <div>
             <div className="login-logo">
-              <img className="login-logo-img" src="/images/rodekors-01.png" alt="Logo"/>
+              <img className="login-logo-img" src="images/rodekors-01.png" alt="Logo"/>
             </div>
             <form>
               <div className="login-grid-inp">
@@ -347,7 +347,7 @@ class Navbar extends React.Component {
 					<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 					  <div className="container-fluid">
 					    <div className="navbar-header">
-					      <img className="logo" src="/images/rodekorsw-01.png" alt="Røde Kors Sanitetsvakt"/>
+					      <img className="logo" src="images/rodekorsw-01.png" alt="Røde Kors Sanitetsvakt"/>
 					    </div>
 					    <ul className="nav navbar-nav">
 					      <li>
@@ -383,7 +383,7 @@ class Navbar extends React.Component {
 				<nav className="navbar navbar-expand-lg navbar-dark bg-dark">
 					<div className="container-fluid">
 						<div className="navbar-header">
-							<img className="logo" src="/images/rodekorsw-01.png" alt="Røde Kors Sanitetsvakt"/>
+							<img className="logo" src="images/rodekorsw-01.png" alt="Røde Kors Sanitetsvakt"/>
 						</div>
 						<ul className="nav navbar-nav">
 							<li>
@@ -486,7 +486,7 @@ class Profile extends React.Component {
         <div>
           <div className="profile-bg">
             <h3 className="medium-title">Personalia</h3>
-            <img className="profile-picture" src="/images/profilepicture.jpg" alt=""/>
+            <img className="profile-picture" src="images/profilepicture.jpg" alt=""/>
             <p className="profile-text" ref='userName'></p>
             <p className="profile-text" ref='userPoints'>Vaktpoeng:</p>
             <p className="profile-text" ref='userAge'>Alder:</p>
@@ -738,7 +738,7 @@ class EditOtherProfile extends React.Component {
         <div>
           <div className="profile-bg">
             <h3 className="medium-title">Personalia</h3>
-            <img className="profile-picture" src="/images/profilepicture.jpg" alt=""/>
+            <img className="profile-picture" src="images/profilepicture.jpg" alt=""/>
             <p className="profile-text" ref='medlemsnummer'>Brukerid:</p>
             <p className="profile-text" ref='userName'></p>
             <p className="profile-text" ref='userPoints'>Vaktpoeng:</p>
@@ -1173,19 +1173,19 @@ class Homepage extends React.Component {
 
             <div className="news-image-grid">
               <div>
-                <img className="news-image" src="/images/jemen.jpg" alt=""/>
+                <img className="news-image" src="images/jemen.jpg" alt=""/>
               </div>
               <div>
-                <img className="news-image" src="/images/jemen.jpg" alt=""/>
+                <img className="news-image" src="images/jemen.jpg" alt=""/>
               </div>
               <div>
-                <img className="news-image" src="/images/jemen.jpg" alt=""/>
+                <img className="news-image" src="images/jemen.jpg" alt=""/>
               </div>
               <div>
-                <img className="news-image" src="/images/jemen.jpg" alt=""/>
+                <img className="news-image" src="images/jemen.jpg" alt=""/>
               </div>
               <div>
-                <img className="news-image" src="/images/jemen.jpg" alt=""/>
+                <img className="news-image" src="images/jemen.jpg" alt=""/>
               </div>
             </div>
 
@@ -1218,7 +1218,7 @@ class Homepage extends React.Component {
 
         <div>
           <div className="news-right-top" ref='usrDiv'>
-            <img className="profile-picture" src="/images/profilepicture.jpg" alt=""/>
+            <img className="profile-picture" src="images/profilepicture.jpg" alt=""/>
           <p className="news-profile-text" ref='usrName'>Per Ole Finsnes</p>
           <p className="-news-profile-text" ref='usrPoints'>Vaktpoeng: 14</p>
           </div>
