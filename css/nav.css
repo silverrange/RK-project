@@ -42,7 +42,7 @@ body {
   left: 0;
   padding: 50px;
   height: 60%;
-  overflow-y: auto;
+  overflow-y: hidden;
 }
 
 .login-wrap-reg {
@@ -147,7 +147,7 @@ li {
   color: #ad0513;
   font-family: 'Abril Fatface', cursive;
   font-size: 2.5em;
-  margin-top: -7px;
+  margin-top: -10px;
 }
 
 .news-left-grid {
@@ -255,6 +255,10 @@ iframe {
   margin: auto;
 }
 
+.about-info {
+  margin-top: -20px;
+}
+
 .abouttext3 {
   width: 130px;
 }
@@ -336,6 +340,14 @@ iframe {
   text-align: left;
   color: #ad0513;
   font-family: 'Abril Fatface', cursive;
+}
+
+.new-event-title {
+  text-align: center;
+  color: #ad0513;
+  font-family: 'Abril Fatface', cursive;
+  font-size: 2.5em;
+  margin-top: -15px;
 }
 
 ::-webkit-scrollbar {
@@ -442,6 +454,10 @@ iframe {
 .event-title-bi-pages {
   font-weight: 800;
   font-size: 0.95em;
+}
+
+.edit-profile-margin {
+  margin-top: 30px;
 }
 
 .edit-profile-bg {
