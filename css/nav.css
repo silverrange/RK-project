@@ -595,12 +595,20 @@ iframe {
   grid-gap: 20px;
 }
 
+.admin-accept-role {
+  width: 70%;
+}
+
 .admin-btn-right {
   display: grid;
   grid-template-columns: 65px 65px;
   margin-left: auto;
   margin-right: 0;
   margin-top: 30px;
+}
+
+.admin-btn-add {
+  text-align: right;
 }
 
 .admin-btn-left {
