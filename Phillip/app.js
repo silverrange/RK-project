@@ -207,7 +207,7 @@ class Register extends React.Component {
                   <label className="login-text">Fornavn:</label>
                   <input type="text" className="form-control" ref='regFirstName'/>
                 </div>
-                <div className="col">
+                  <div className="col">
                     <label className="login-text">Etternavn:</label>
                     <input type="text" className="form-control" ref='regLastName'/>
                   </div>
@@ -230,14 +230,14 @@ class Register extends React.Component {
                   <div className="form-group login-form">
                     <div className="row">
                     <div className="col">
-                <label className="login-text">By:</label>
-                  <input type="text" className="form-control" ref='regCity'/>
-                </div>
-                <div className="col">
-                    <label className="login-text">Postnr:</label>
-                    <input type="number" className="form-control" ref='regZip'/>
-                  </div>
-                </div>
+                      <label className="login-text">By:</label>
+                      <input type="text" className="form-control" ref='regCity'/>
+                    </div>
+                    <div className="col">
+                      <label className="login-text">Postnr:</label>
+                      <input type="number" className="form-control" ref='regZip'/>
+                    </div>
+                    </div>
                   </div>
 
                   <div className="form-group login-form">
@@ -275,10 +275,10 @@ class Register extends React.Component {
                 <NavLink  to='/forgotpassword'>Glemt passord?</NavLink>
               </div>
               <div>
-                <span ref="feilmelding"></span>
                 <br/>
                 <div className="login-reg-btn">
                   <button id='login-button' type="button" className="btn btn-danger" ref='btnSendReg'>Registrer</button>
+                  <p ref="feilmelding"></p>
                 </div>
               </div>
             </div>
@@ -973,30 +973,67 @@ class EditProfile extends React.Component {
       <div className="edit-profile-bg">
         <h1 className="eventmediumtitle">Rediger profil</h1>
         <form>
-          <div className="login-grid">
-            <div className="form-group">
-              <label className="login-text">Fornavn:</label>
-              <input type="text" ref='editFirstName' className="form-control"/>
-              <label className="login-text">Adresse:</label>
-              <input type="text" className="form-control" ref='editAddress'/>
-              <label className="login-text">By:</label>
-              <input type="text" className="form-control" ref='editCity'/>
-              <label className="login-text">Epost:</label>
-              <input type="email" className="form-control" ref='editEmail'/>
-              <label className="login-text">Passord:</label>
-              <input type="password" className="form-control"/>
-            </div>
-            <div className="form-group">
-              <label className="login-text">Etternavn:</label>
-              <input type="text" className="form-control" ref='editLastName'/>
-              <label className="login-text">Telefon:</label>
-              <input type="number" className="form-control" ref='editPhone'/>
-              <label className="login-text">Postnr:</label>
-              <input type="number" className="form-control" ref='editZip'/>
-              <label className="login-text">Alder:</label>
-              <input type="number" className="form-control" ref='editAge'/>
-              <label className="login-text">Bekreft passord:</label>
-              <input type="password" className="form-control" ref='editPassword'/>
+          <div className="login-grid-inp edit-profile-margin">
+              <div className="form-group login-form">
+                <div className="row">
+                  <div className="col">
+                    <label className="login-text">Fornavn:</label>
+                    <input type="text" ref='editFirstName' className="form-control"/>
+                  </div>
+                  <div className="col">
+                    <label className="login-text">Etternavn:</label>
+                    <input type="text" className="form-control" ref='editLastName'/>
+                  </div>
+                </div>
+              </div>
+                <div className="form-group login-form">
+                  <div className="row">
+                    <div className="col">
+                      <label className="login-text">Adresse:</label>
+                      <input type="text" className="form-control" ref='editAddress'/>
+                    </div>
+                    <div className="col">
+                      <label className="login-text">Telefon:</label>
+                      <input type="number" className="form-control" ref='editPhone'/>
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group login-form">
+                  <div className="row">
+                    <div className="col">
+                      <label className="login-text">By:</label>
+                      <input type="text" className="form-control" ref='editCity'/>
+                    </div>
+                    <div className="col">
+                      <label className="login-text">Postnr:</label>
+                      <input type="number" className="form-control" ref='editZip'/>
+                    </div>
+                  </div>
+                </div>
+                <div className="form-group login-form">
+                  <div className="row">
+                    <div className="col">
+                      <label className="login-text">Epost:</label>
+                      <input type="email" className="form-control" ref='editEmail'/>
+                    </div>
+                    <div className="col">
+                      <label className="login-text">Alder:</label>
+                      <input type="number" className="form-control" ref='editAge'/>
+                    </div>
+                  </div>
+                </div>
+
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Passord:</label>
+                  <input type="password" className="form-control"/>
+                </div>
+                <div className="col">
+                  <label className="login-text">Bekreft passord:</label>
+                  <input type="password" className="form-control" ref='editPassword'/>
+                </div>
+              </div>
             </div>
           </div>
         </form>
@@ -1416,7 +1453,7 @@ class Contact extends React.Component {
                 <p className="aboutbreadtext">Med over 1000 frivillige og flere enn 20 aktiviteter er vi til stede for andre mennesker og sårbare grupper i byen vår.</p>
               </div>
 
-              <div>
+              <div className="about-info">
                 <div className="aboutflex">
                   <div className="abouttext2">
                     <h4 className="aboutmediumtitle">Adresse</h4>
@@ -1457,7 +1494,7 @@ class Contact extends React.Component {
                 <p className="aboutbreadtext">I over 73 år har Malvik Røde Kors og våre frivillige stilt opp for å hjelpe til i lokalsamfunnet. Det tenker vi å fortsette med, og da trenger vi flere frivillige.</p>
               </div>
 
-              <div>
+              <div className="about-info">
                 <div className="aboutflex">
                   <div className="abouttext2">
                     <h4 className="aboutmediumtitle">Adresse</h4>
@@ -1774,29 +1811,58 @@ class EditEvent extends React.Component {
     return (
 			<div className="big-container">
 	      <div className="new-event-bg">
-	        <h1 className="eventmediumtitle">Redigere arrangement</h1>
+	        <h1 className="new-event-title">Redigere arrangement</h1>
 	        <form>
-	          <div className="login-grid">
-	            <div className="form-group">
-	              <label className="login-text">Tittel:</label>
-	              <input type="text" className="form-control" ref='editArrName'/>
-	              <label className="login-text">Startdato:</label>
-	              <input type="datetime-local" className="form-control" ref='editStartDato'/>
-	              <label className="login-text">Vaktansvarlig:</label>
-	              <input type="text" className="form-control" ref='editShitManager'/>
-	              <label className="login-text">Vaktlag:</label>
-	              <select className="form-control" id="exampleFormControlSelect1" ref='editRoles'></select>
-	            </div>
-	            <div className="form-group">
-	              <label className="login-text">Vaktpoeng:</label>
-	              <input type="number" className="form-control" ref='editPoints'/>
-	              <label className="login-text">Sluttdato:</label>
-	              <input type="datetime-local" className="form-control" ref='editSluttDato'/>
-	              <label className="login-text">Kontakttelefon:</label>
-	              <input type="number" className="form-control" ref='editTlf'/>
-	              <label className="login-text">Møtested:</label>
-	              <input type="text" className="form-control" ref='editMeet'/>
-	            </div>
+	          <div className="login-grid-inp edit-profile-margin">
+              <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Tittel:</label>
+                  <input type="text" className="form-control" ref='editArrName'/>
+                </div>
+                <div className="col">
+                  <label className="login-text">Vaktpoeng:</label>
+                  <input type="number" className="form-control" ref='editPoints'/>
+                </div>
+              </div>
+            </div>
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Startdato:</label>
+                  <input type="datetime-local" className="form-control" ref='editStartDato'/>
+                </div>
+                <div className="col">
+                  <label className="login-text">Sluttdato:</label>
+                  <input type="datetime-local" className="form-control" ref='editSluttDato'/>
+                </div>
+              </div>
+            </div>
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Vaktansvarlig:</label>
+                  <input type="text" className="form-control" ref='editShitManager'/>
+                </div>
+                <div className="col">
+                  <label className="login-text">Kontakttelefon:</label>
+                  <input type="number" className="form-control" ref='editTlf'/>
+                </div>
+              </div>
+            </div>
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Vaktlag:</label>
+                  <select className="form-control" id="exampleFormControlSelect1" ref='editRoles'></select>
+                </div>
+                <div className="col">
+                  <label className="login-text">Møtested:</label>
+                  <input type="text" className="form-control" ref='editMeet'/>
+                </div>
+              </div>
+            </div>
+
 	          </div>
 	          <div className="form-group">
 	            <label>Beskrivelse:</label>
@@ -2460,28 +2526,56 @@ class NewEvent extends React.Component {
   render() {
     return (<div className="big-container">
       <div className="new-event-bg">
-        <h1 className="eventmediumtitle">Legg til arrangement</h1>
+        <h1 className="new-event-title">Legg til arrangement</h1>
         <form>
-          <div className="login-grid">
-            <div className="form-group">
-              <label className="login-text">Tittel:</label>
-              <input type="text" className="form-control" ref='regArrName'/>
-              <label className="login-text">Startdato:</label>
-              <input type="datetime-local" className="form-control" ref='regStartDato'/>
-              <label className="login-text">Vaktansvarlig:</label>
-              <input type="text" className="form-control" ref='regshiftManager'/>
-              <label className="login-text">Vaktlag:</label>
-              <select className="form-control" id="exampleFormControlSelect1" ref='rolelistSelect'></select>
+          <div className="login-grid-inp edit-profile-margin">
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Tittel:</label>
+                  <input type="text" className="form-control" ref='regArrName'/>
+                </div>
+                <div className="col">
+                  <label className="login-text">Vaktpoeng:</label>
+                  <input type="number" className="form-control" ref='regPoints'/>
+                </div>
+              </div>
             </div>
-            <div className="form-group">
-              <label className="login-text">Vaktpoeng:</label>
-              <input type="number" className="form-control" ref='regPoints'/>
-              <label className="login-text">Sluttdato:</label>
-              <input type="datetime-local" className="form-control" ref='regSluttDato'/>
-              <label className="login-text">Kontakttelefon:</label>
-              <input type="number" className="form-control" ref='regTlf'/>
-              <label className="login-text">Møtested:</label>
-              <input type="text" className="form-control" ref='regMeet'/>
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Startdato:</label>
+                  <input type="datetime-local" className="form-control" ref='regStartDato'/>
+                </div>
+                <div className="col">
+                  <label className="login-text">Sluttdato:</label>
+                  <input type="datetime-local" className="form-control" ref='regSluttDato'/>
+                </div>
+              </div>
+            </div>
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Vaktansvarlig:</label>
+                  <input type="text" className="form-control" ref='regshiftManager'/>
+                </div>
+                <div className="col">
+                  <label className="login-text">Kontakttelefon:</label>
+                  <input type="number" className="form-control" ref='regTlf'/>
+                </div>
+              </div>
+            </div>
+            <div className="form-group login-form">
+              <div className="row">
+                <div className="col">
+                  <label className="login-text">Vaktlag:</label>
+                  <select className="form-control" id="exampleFormControlSelect1" ref='rolelistSelect'></select>
+                </div>
+                <div className="col">
+                  <label className="login-text">Møtested:</label>
+                  <input type="text" className="form-control" ref='regMeet'/>
+                </div>
+              </div>
             </div>
           </div>
           <div className="form-group">
