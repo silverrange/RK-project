@@ -83,12 +83,10 @@ class LoginPage extends React.Component {
       })
       userService.loginUser(inpUser, inpPassword, (result) => {
         if (result != undefined) {
-          console.log("logget inn bruker - ID:" + result.userID);
           this.userisloggedin = userService.browseruser()
           userid = this.userisloggedin.userID;
           history.push('/homepage');
         } else {
-          console.log("mislykket innlogging");
           this.refs.loginOutput.innerText = 'Feil brukernavn eller passord.';
           userService.emptystorage();
           this.forceUpdate();
@@ -163,7 +161,6 @@ class ForgotPassword extends React.Component {
         });
         let email = this.refs.inpMail.value;
         let password = Math.random().toString(36).slice(-8);
-        console.log(password)
         userService.getThisUser(email, (result) => {
           userService.updateUserPassword(password, email, (result) => {})
           if (result != undefined) {
@@ -181,7 +178,6 @@ class ForgotPassword extends React.Component {
               if (error) {
                 return console.log(error);
               }
-              console.log('Message sent: %s', info.messageId);
               this.refs.tilbakemelding.innerText = 'Mailen er sendt, sjekk eposten din';
             });
           } else {
@@ -559,7 +555,6 @@ class Profile extends React.Component {
       userService.getCompetence(title, (result) => {
         compid = result.compID;
         userService.regCompetence(userid, compid, fileUpload, finished, active, (result) => {
-          console.log(compid);
           this.forceUpdate();
         })
       })
@@ -671,7 +666,6 @@ class Profile extends React.Component {
       let r = confirm('Er du sikker på at du vil deaktivere brukeren din?');
       if (r == true) {
         userService.deactivateUser(userid, (result) => {
-          console.log('Deaktivert bruker - ID:' + userid);
           userService.emptystorage();
           history.push('/loginPage/')
           // history.push('/loginPage/');
@@ -806,7 +800,6 @@ class EditOtherProfile extends React.Component {
       userService.getCompetence(title, (result) => {
         compid = result.compID;
         userService.regCompetence(viewid, compid, finished, (result) => {
-          console.log(compid);
           this.forceUpdate();
         })
       })
@@ -947,7 +940,6 @@ class EditOtherProfile extends React.Component {
     });
     this.refs.btnDeactivate.onclick = () => {
         userService.deactivateUser(viewid, (result) => {
-          console.log('Deaktivert bruker - ID:' + viewid);
           this.refs.btnDeactivate.hidden = true;
           this.refs.deactive.hidden = true;
           this.refs.deactive2.hidden = true;
@@ -1058,7 +1050,6 @@ class EditProfile extends React.Component {
         let newAge = this.refs.editAge.value;
 
         userService.editUser(redid ? redid : userid, newFirstname, newLastname, newAddress, newEmail, newPassword, newCity, newZip, newPhone, newAge, (result) => {})
-        console.log('Oppdatert bruker - ID:' + userid);
         history.push('/profile/');
         this.forceUpdate();
       }
@@ -1113,7 +1104,6 @@ class Competence extends React.Component {
       userService.getCompetence(title, (result) => {
         compid = result.compID;
         userService.regCompetence(redid, compid, finished, (result) => {
-          console.log(compid);
           history.push('/EditOtherProfile');
         })
       })
@@ -1874,8 +1864,6 @@ class EditEvent extends React.Component {
             var newDesc = this.refs.editDescript.value;
             var newPoints = this.refs.editPoints.value;
             userService.editArr(eventID, newName, newStartDato, newEndDato, newTlf, newrolelist, newMeet, newDesc, newPoints, (result) => {})
-            console.log(newroleID);
-            console.log('Oppdatert Arrangement:');
             alert('Arrangemenetet ble oppdatert');
             history.push('/divevent/');
             this.forceUpdate();
@@ -1927,7 +1915,7 @@ class Calendar extends React.Component {
           date: "Dato",
           time: "Tid",
           event: "Arrangement"
-        }} events={this.state.events} step={60} startAccessor='startDate' endAccessor='endDate' showMultiDayTimes="showMultiDayTimes" defaultDate={new Date()} style={{
+        }} events={this.state.events} step={60} startAccessor='startDate' endAccessor='endDate' defaultDate={new Date()} style={{
           height: 400
         }} onSelectEvent={event => this.setArrinfo(event)}/>
 			<div className="event-div-grid-btn-right">
@@ -1953,8 +1941,6 @@ class Calendar extends React.Component {
   }
   componentWillMount() {
     userService.getEvent((result) => {
-      console.log(result)
-      // eventID = result[0].eventID;
       this.setState({events: result});
       this.forceUpdate();
     })
@@ -2097,7 +2083,6 @@ class Administrator extends React.Component {
   }
 
   updatecomplist(compuserID, userid) {
-    console.log(compuserID);
     let active = 0
     userService.acceptCompetence(active, userid, compuserID, (result) => {
       userService.getDivUserComp((result) => {
@@ -2160,7 +2145,6 @@ class Administrator extends React.Component {
       history.push('/makenewrole/')
     }
     userService.getInactiveUsers(userid, (result) => {
-      console.log(result)
       this.brukere = result;
       this.skrivutinfo();
     })
@@ -2174,7 +2158,6 @@ class Administrator extends React.Component {
     })
     userService.getDivUserComp((result) => {
       this.active = result;
-      console.log(this.active)
       this.userCompList();
     })
   }
@@ -2283,7 +2266,6 @@ class NewRole extends React.Component {
       let description = this.refs.NewRoleDesc.value;
 
       userService.addRoleList(name, description, (result) => {
-        console.log('Arrangementet er opprettet');
         history.push('/admin/');
         this.forceUpdate();
       })
@@ -2344,7 +2326,6 @@ class ChangeRole extends React.Component {
   update() {
 		this.refs.deleteRoleList.onclick = () => {
 			userService.deleteRoleList(rolelistID, (result) => {
-				console.log('Slettet vaktmal, ID - ' + rolelistID);
 				history.push('/admin');
 			})
 		}
@@ -2359,7 +2340,6 @@ class ChangeRole extends React.Component {
       var editDescription = this.refs.editDescription.value;
 
       userService.editRoleList(rolelistID, editname, editDescription, (result) => {})
-      console.log('Vaktmal ble oppdatert, ID: ' + rolelistID);
       history.push('/admin/');
     }
     this.refs.back.onclick = () => {
@@ -2397,7 +2377,6 @@ class ChangeRole extends React.Component {
 
 				btnDeleteRole.onclick = () => {
 					userService.deleteRoleFromList(rolelistID, roleID, (result) => {
-						console.log('Fjernet rolle ID - ' + btnDeleteRole.id);
 						this.refs.savedRoles.innerText = '';
             this.refs.roleSelect.innerText = '';
 						this.update();
@@ -2411,7 +2390,6 @@ class ChangeRole extends React.Component {
         let roleID = result.roleID;
 
         userService.addRoleToList(roleID, rolelistID, (result) => {
-					console.log('La til rolle ID - ' + roleID);
 					// this.refs.savedRoles.innerText = 'Rolleliste:';
 					this.refs.savedRoles.innerText = '';
           this.refs.roleSelect.innerText = '';
@@ -2671,26 +2649,26 @@ ReactDOM.render((<HashRouter>
   <div>
     <Navbar/>
     <Switch>
-      <Route exact="exact" path='/makenewrole' component={NewRole}/>
-      <Route exact="exact" path='/changerole' component={ChangeRole}/>
-      <Route exact="exact" path='/editotherprofile' component={EditOtherProfile}/>
-      <Route exact="exact" path='/admin' component={Administrator}/>
-      <Route exact="exact" path='/passiv' component={Passiv}/>
-      <Route exact="exact" path='/forgotPassword' component={ForgotPassword}/>
-      <Route exact="exact" path='/vaktliste' component={Vaktliste}/>
-      <Route exact="exact" path='/editevent' component={EditEvent}/>
-      <Route exact="exact" path='/divevent' component={DivEvent}/>
-      <Route exact="exact" path='/newEvent' component={NewEvent}/>
-      <Route exact="exact" path='/homepage' component={Homepage}/>
-      <Route exact="exact" path='/loginPage' component={LoginPage}/>
-      <Route exact="exact" path='/register' component={Register}/>
-      <Route exact="exact" path='/calendar' component={Calendar}/>
-      <Route exact="exact" path='/profile' component={Profile}/>
-      <Route exact="exact" path='/editprofile' component={EditProfile}/>
-      <Route exact="exact" path='/events' component={Events}/>
-      <Route exact="exact" path='/contact' component={Contact}/>
-      <Route exact="exact" path='/search' component={Search}/>
-      <Route exact="exact" path='/competence' component={Competence}/>
+      <Route exact path='/makenewrole' component={NewRole}/>
+      <Route exact path='/changerole' component={ChangeRole}/>
+      <Route exact path='/editotherprofile' component={EditOtherProfile}/>
+      <Route exact path='/admin' component={Administrator}/>
+      <Route exact path='/passiv' component={Passiv}/>
+      <Route exact path='/forgotPassword' component={ForgotPassword}/>
+      <Route exact path='/vaktliste' component={Vaktliste}/>
+      <Route exact path='/editevent' component={EditEvent}/>
+      <Route exact path='/divevent' component={DivEvent}/>
+      <Route exact path='/newEvent' component={NewEvent}/>
+      <Route exact path='/homepage' component={Homepage}/>
+      <Route exact path='/loginPage' component={LoginPage}/>
+      <Route exact path='/register' component={Register}/>
+      <Route exact path='/calendar' component={Calendar}/>
+      <Route exact path='/profile' component={Profile}/>
+      <Route exact path='/editprofile' component={EditProfile}/>
+      <Route exact path='/events' component={Events}/>
+      <Route exact path='/contact' component={Contact}/>
+      <Route exact path='/search' component={Search}/>
+      <Route exact path='/competence' component={Competence}/>
       <Redirect from="/" to="/loginPage"/>
     </Switch>
   </div>
